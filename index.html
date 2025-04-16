@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>VIP视频解析</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="https://fastly.jsdelivr.net/gh/lb94wpz/CDN/img/favicon.jpg">
+	<script>
+		function onload() {
+		}
+		function fnChange() {
+		}
+		function onClear() {
+			document.getElementById("url").value="";
+		}
+		function onPlay() {
+			var prefix = document.getElementById("prefix");
+			var prefix_url = prefix.options[prefix.selectedIndex].value;
+			var url = document.getElementById("url").value;
+			var iframe = document.getElementById("play");
+			if (url.length > 0) {
+				iframe.src = prefix_url + url;
+			}
+		}
+	</script>
+</head>
+<body onload="onload()" bgcolor=#000000>
+<table width="100%" height="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td><iframe src="" id="play" name="play" width="100%" height="100%" align="center" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe></td>
+	</tr>
+	<tr align="center">
+		<td height="10">
+			<form method="post" action="">
+				<select id="prefix" name="prefix" onchange="fnChange()">
+					<option value="https://www.8090g.cn/jiexi/?url=" selected>8090</option>
+					<option value="https://www.ckplayer.vip/jiexi/?url=">Ckplayer</option>
+					<option value="https://jx.m3u8.tv/jiexi/?url=">M3U8</option>
+					<option value="https://jx.nnxv.cn/tv.php?url=">Nx</option>
+					<option value="https://www.playm3u8.cn/jiexi.php?url=">Playm3u8</option>
+					<option value="https://bd.jx.cn/?url=">冰豆</option>
+					<option value="https://www.pouyun.com/?url=">剖云</option>
+					<option value="https://www.pangujiexi.com/jiexi/?url=">盘古</option>
+					<option value="https://jx.xmflv.com/?url=">虾米1</option>
+					<option value="https://jx.xmflv.cc/?url=">虾米2</option>
+					<option value="https://www.yemu.xyz/?url=">夜幕</option>
+					<option value="https://jx.77flv.cc/?url=">77云</option>
+					<option value="https://jx.dmflv.cc/?url=">大米云</option>
+					<option value="https://jx.xymp4.cc/?url=">咸鱼云</option>
+				</select>
+				<input type="text" id="url" name="url" size="100" placeholder="输入视频地址，点击播放（支持腾讯视频、爱奇艺、优酷、芒果TV、哔哩哔哩等平台视频）" value="">
+				<input type="button" value="播放" onclick="onPlay()">
+				<input type="button" value="清除" onclick="onClear()">
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
